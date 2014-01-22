@@ -1,23 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <style>
-  html { 
-    background: url(http://www.gravatar.com/avatar/f8d7c4a4899736c59ec1e40c7021d477?s=1024) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-  
-  p {
-    display:none;
-  }
-</style>
+    <meta charset="UTF-8" />
+    <title>Potherca</title>
+    <style>
+        body {
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            height: 100%;
+            background-color: rgb(186, 21, 21);
+            overflow: hidden;
+        }
+        
+        body:before {
+            content: "";
+            position: absolute;
+            height: 100%; width: 100%;
+            background: url(http://www.gravatar.com/avatar/f8d7c4a4899736c59ec1e40c7021d477?s=1024) no-repeat center center fixed;
+        
+            z-index: -1; /* Keep the background behind the content */
+            
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            
+            -webkit-filter: blur(0.45em); 
+            -moz-filter: blur(0.45em); 
+            -o-filter: blur(0.45em); 
+            -ms-filter: blur(0.45em); 
+            filter: blur(0.45em);
+        }
+          
+        h1, p {
+            display:none;
+        }
+            
+    </style>
 </head>
 <body>
-  <p>
-    Homepage for Potherca.
-  </p>
+    <h1>
+        Potherca
+    </h1>
+    <p>
+        Homepage for Ben Peachey
+    </p>
 </body>
 </html>
