@@ -1,21 +1,31 @@
 <!DOCTYPE html>
-<html>
-<head>
+
+<!-- Hello, welcome to this --><html><!-- page! -->
+
+<head profile="http://gmpg.org/xfn/11">
     <meta charset="UTF-8" />
+    
     <title>Potherca</title>
+    
     <style>
+        html, body, body:before {
+            height: 100%; width: 100%; /* For older and mobile browsers */
+            background-color: rgb(186, 21, 21); /* or #BA1515 if you prefer RGB-HEX */
+        }
+
         body {
             position: absolute;
-            top: 0; bottom: 0; left: 0; right: 0;
+            top: 0; 
+            bottom: 0; 
+            left: 0; 
+            right: 0;
             height: 100%;
-            background-color: rgb(186, 21, 21);
             overflow: hidden;
         }
         
         body:before {
             content: "";
             position: absolute;
-            height: 100%; width: 100%;
             background: url(http://www.gravatar.com/avatar/f8d7c4a4899736c59ec1e40c7021d477?s=1024) no-repeat center center fixed;
         
             z-index: -1; /* Keep the background behind the content */
@@ -32,7 +42,7 @@
             filter: blur(0.45em);
         }
           
-        h1, p {
+        h1, p, ul {
             display:none;
         }
             
@@ -45,5 +55,9 @@
     <p>
         Homepage for Ben Peachey
     </p>
+    
+    <ul>
+        <li><a href='https://alpha.app.net/potherca' rel='me'>App.net</a></li>
+    </ul>
 </body>
 </html>
