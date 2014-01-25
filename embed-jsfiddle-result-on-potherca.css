@@ -1,0 +1,51 @@
+li {
+    list-style-type: none;
+}
+
+a {
+    color: black;     
+}
+
+a.icon-jsfiddle {
+    background-image: url(http://jsfiddle.net/favicon.png);
+    background-size: contain;
+    background-position: center left;
+    padding-right:0;
+    padding-left: 23px;
+}
+
+a.icon-github {
+    border-bottom: none;
+    margin-right: 0.25em;
+    background-image: none;
+    padding-right: 0;
+}
+
+.error {
+    border: 1px solid red;
+    color: darkred;
+}
+
+.description {
+    display: block;
+    padding: 0.5em 2em;
+}
+
+
+/* Corrections of base.css so things look nicer on http://pother.ca */
+body {
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+body > * {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+h1:first-child {
+    z-index:1;
+    background-color: rgba(255, 255, 255, 0.8);    
+}
+
+
+
