@@ -1,54 +1,124 @@
 <!DOCTYPE html>
 
-<!-- Hello, welcome to this --><html><!-- page! -->
+<!-- ## Introduction
+  -- There will be a lot for you to read here, in the comments, so take your 
+  -- time. First of all: Hello! Welcome to this --><html><!-- page! 
+  --
+  -- How kind of you to show an interest of how this page was built. I will try
+  -- to explain what is happening and why, giving reference for further study,
+  -- should you be interested. If you enjoy this source code, you think
+  -- something is wrong or if you have *any* questions, feel free to [start a
+  -- conversation by opening a ticket on github](https://github.com/potherca/potherca.github.io/issues/new)
+ !-->
 
+<!-- One of the things I am a really big fan of is the ability to let robots
+  -- know how to interpret data on a website. This allows us, as users, to get
+  -- all sorts of links to things that could be of interest to us. A lot of
+  -- standards have been dfined that dictate how to do this and several of these
+  -- are used on this page.
+ !-->
+<!-- The first of these standards I use XFN. This stands for Xhtml Friends
+  -- Network. This standard has a set of rules that let you state your
+  -- relationship to another individuals you link to from an HTML page. It does
+  -- so by describing these relationships using the `rel` attribute of the link 
+  -- 
+  -- If you want to learn more, read [the introduction on XFN site](http://gmpg.org/xfn/intro).
+  --
+  -- For now this page only links to other pages that represent me online, so 
+  -- the only links you'll find will look a bit like this:
+  -- 
+  --     <a href="http://example.com/potherca" rel="me">My account at Example.com</a>
+  -- 
+  -- The full set of relationships are: contact, acquaintance, friend, met, 
+  -- co-worker, colleague, co-resident, neighbor, child, parent, sibling, 
+  -- spouse, kin, muse, crush, date, sweetheart and me. You can read about their 
+  -- meaning in the [XFN relationships meta data profile](http://gmpg.org/xfn/11).
+  -- 
+  -- The URI for this profile `http://gmpg.org/xfn/11` is also what we need to 
+  -- add to `<HEAD>` tag to let robots know we are using these standards in this
+  -- document.
+  -->
 <head profile="http://gmpg.org/xfn/11">
+    <!-- This page was written in everybodies favorite character set. -->
     <meta charset="UTF-8" />
-    
+
     <title>Potherca</title>
 
     <link rel="openid.server" href="https://indieauth.com/openid" />
     <link rel="openid.delegate" href="http://pother.ca/" />
     
     <style>
+        @charset "UTF-8";
+        @import url(http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
+
         html, body, body:before {
             height: 100%; width: 100%; /* For older and mobile browsers */
         }
 
         body {
+            font-family: 'Droid Sans', Arial, sans-serif;
             background-color: rgb(186, 21, 21); /* or #BA1515 if you prefer RGB-HEX */
             position: absolute;
-            top: 0; 
-            bottom: 0; 
-            left: 0; 
+            top: 0;
+            bottom: 0;
+            left: 0;
             right: 0;
             height: 100%;
             overflow: hidden;
         }
-        
+
         body:before {
             content: "";
             position: absolute;
             background: url(http://www.gravatar.com/avatar/f8d7c4a4899736c59ec1e40c7021d477?s=1024) no-repeat center center fixed;
-        
+
             z-index: -1; /* Keep the background behind the content */
-            
+
             -webkit-background-size: cover;
             -moz-background-size: cover;
             -o-background-size: cover;
             background-size: cover;
-            
-            -webkit-filter: blur(0.45em); 
-            -moz-filter: blur(0.45em); 
-            -o-filter: blur(0.45em); 
-            -ms-filter: blur(0.45em); 
+
+            -webkit-filter: blur(0.45em);
+            -moz-filter: blur(0.45em);
+            -o-filter: blur(0.45em);
+            -ms-filter: blur(0.45em);
             filter: blur(0.45em);
         }
-          
-        h1, h2, h3, p, ul {
-            display:none;
+        
+        h1, h2 {
+            text-align:center;
         }
-            
+
+        /* ------------------------------------------------------------------ *
+         *                  Hyperlinks should be hyper-sexy too!              *
+         * ------------------------------------------------------------------ */
+        a:link {
+            color: #000;
+            text-decoration: none;
+            border-bottom: 0.1em solid #CCC;
+        }
+
+        a:visited {
+            color: rgb(101, 123, 131);
+        }
+
+        a:hover,
+        a:active {
+            border-bottom-color: rgb(220, 50, 47);
+            color: #586e75;
+        }
+        
+        iframe {
+            margin: 1em 0;
+            border: 1px solid;
+        }
+        
+        li {
+            list-style-position: inside;
+        }
+
+        /* @TODO: Get the styles for the .page more aligned with those of base.css */
         .page {
             background-color: rgb(255, 255, 255, 0.5);
             background-color: rgba(255, 255, 255, 0.5);
@@ -58,8 +128,34 @@
             min-height: 20em;
             padding: 0em 2em;
             border-radius: 0.35em;
-            margin: auto;
+            margin: 5% auto;
         }
+        
+        .page div {
+            height: 100%;
+            border: 1px solid;
+            overflow: auto;
+            margin: 1em 0;
+
+            background-color: rgb(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .page div > * {
+            background-color: rgba(255, 255, 255, 0.2);
+            margin:0;
+            padding: 0.25em 1em;
+        }
+
+        .page div h2:first-child {
+            background-color: rgba(255, 255, 255, 0.8);    
+            font-size: 200%;
+            height: 1.5em;
+            left: 0;
+            text-align: center;
+            top: 0;
+        }
+
     </style>
 </head>
 <body>
@@ -70,40 +166,52 @@
         <p>
             Homepage for Ben Peachey
         </p>
-        
-        <h2>My Accounts</h2>
-        <h3>Personal</h3>
-        <ul>
-            <li><a rel="me" href="https://facebook.com/benpeachey">Facebook</a></li>
-            <li><a rel="me" href="http://www.last.fm/user/potherca">Last.fm</a></li>
-            <li><a rel="me" href="https://twitter.com/potherca">Twitter</a></li>
-        </ul>
-        
-        <h3>Work Related</h3>
-        <ul>
-            <li><a rel="me" href="http://linkedin.com/in/benpeachey">LinkedIn</a></li>
-        </ul>
 
-        <h3>Code Related</h3>
-        <ul>
-            <li><a rel="me" href="http://coderbits.com/potherca">CoderBits</a></li>
-            <li><a rel="me" href="http://coderwall.com/potherca">CoderWall</a></li>
-            <li><a rel="me" href="https://github.com/potherca">Github</a></li>
-            <li><a rel="me" href="https://stackoverflow.com/users/153049/ben-peachey">Stack Overflow</a></li>
-        </ul>
-        
-        <h3>Other</h3>
-        <ul>
-            <li><a rel="me" href="https://alpha.app.net/potherca">App.net</a></li>
-            <li><a rel="me" href="http://profiles.google.com/ben.peachey">Google</a></li>
-        </ul>
+        <div>
+            <h2>Other places you can find me</h2>
 
-        <h3>Email</h3>
-        <ul>
-            <li><a href="mailto:potherca@gmail.com">potherca@gmail.com</a></li>
-            <li><a href="mailto:potherca@hotmail.com">potherca@hotmail.com</a></li>
-        </ul>
+            <h3>Personal</h3>
+            <ul>
+                <li><a rel="me" href="https://facebook.com/benpeachey">Facebook</a></li>
+                <li><a rel="me" href="http://www.last.fm/user/potherca">Last.fm</a></li>
+                <li><a rel="me" href="https://twitter.com/potherca">Twitter</a></li>
+            </ul>
+
+            <h3>Work Related</h3>
+            <ul>
+                <li><a rel="me" href="http://linkedin.com/in/benpeachey">LinkedIn</a></li>
+            </ul>
+
+            <h3>Code Related</h3>
+            <ul>
+                <li><a rel="me" href="http://coderbits.com/potherca">CoderBits</a></li>
+                <li><a rel="me" href="http://coderwall.com/potherca">CoderWall</a></li>
+                <li><a rel="me" href="https://github.com/potherca">Github</a></li>
+                <li><a rel="me" href="https://stackoverflow.com/users/153049/ben-peachey">Stack Overflow</a></li>
+            </ul>
+
+            <h3>Other</h3>
+            <ul>
+                <li><a rel="me" href="https://alpha.app.net/potherca">App.net</a></li>
+                <li><a rel="me" href="http://www.flickr.com/people/potherca/">Flickr</a></li>
+                <li><a rel="me" href="http://profiles.google.com/ben.peachey">Google</a></li>
+                <li><a rel="me" href="http://www.threadless.com/profile/526830/potherca">Threadless</a></li>
+            </ul>
+
+            <h3>Email</h3>
+            <ul>
+                <li><a href="mailto:potherca@gmail.com">potherca@gmail.com</a></li>
+                <li><a href="mailto:potherca@hotmail.com">potherca@hotmail.com</a></li>
+            </ul>
+        </div>
+    
+        <iframe width="100%" height="100%" src="http://fiddle.jshell.net/potherca/SdnN3/show/light/" allowfullscreen="allowfullscreen" frameborder="0" scrolling="auto"></iframe>
+
+        <iframe width="100%" height="100%" src="http://fiddle.jshell.net/potherca/X9j8g/show/light/" allowfullscreen="allowfullscreen" frameborder="0" scrolling="auto"></iframe>
+
     </div>
+
+    
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
