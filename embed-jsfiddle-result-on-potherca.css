@@ -21,6 +21,15 @@ a.icon-github {
     padding-right: 0;
 }
 
+a.icon-jsfiddle {
+    background-image: url(http://ideone.com/gfx2/img/favicon.png);
+    /*background-size: contain;*/
+    background-position: center left;
+    padding-right:0;
+    padding-left: 23px;
+}
+
+
 .error {
     border: 1px solid red;
     color: darkred;
