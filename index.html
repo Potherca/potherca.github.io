@@ -46,6 +46,8 @@
     -->
     <meta name="monetization" content="$pother.ca" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Potherca</title>
 
     <link rel="openid.server" href="https://indieauth.com/openid" />
@@ -54,7 +56,6 @@
     <link rel="webmention" href="https://webmention.io/pother.ca/webmention" />
    
     <style>
-        @charset "UTF-8";
         @import url(https://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono);
 
         html, body, body:before {
@@ -62,51 +63,39 @@
         }
 
         body {
-            font-family: 'Droid Sans', Arial, sans-serif;
             background-color: rgb(186, 21, 21); /* or #BA1515 if you prefer RGB-HEX */
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            overflow: hidden;
+            font-family: 'Droid Sans', Arial, sans-serif;
+            min-height: 100%;
         }
 
         body:before {
-            content: "";
-            position: absolute;
-            background: url(https://www.gravatar.com/avatar/f8d7c4a4899736c59ec1e40c7021d477?s=1024) no-repeat center center fixed;
-
-            z-index: -1; /* Keep the background behind the content */
-
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
             background-size: cover;
-
-            -webkit-filter: blur(0.45em);
-            -moz-filter: blur(0.45em);
-            -o-filter: blur(0.45em);
-            -ms-filter: blur(0.45em);
+            background: url(https://www.gravatar.com/avatar/f8d7c4a4899736c59ec1e40c7021d477?s=1024) no-repeat center center fixed;
+            content: "";
             filter: blur(0.45em);
+            position: absolute;
+            z-index: -1; /* Keep the background behind the content */
         }
 
-        h1, h2 {
-            text-align:center;
+        header, h2 {
+            text-align: center;
+            color: rgb(255, 255, 255);
+            text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+            width: 100%;
         }
 
         /* ------------------------------------------------------------------ *
          *                  Hyperlinks should be hyper-sexy too!              *
          * ------------------------------------------------------------------ */
         a:link {
+            border-bottom: 0.1em solid #ccc;
             color: #000;
             text-decoration: none;
-            border-bottom: 0.1em solid #CCC;
         }
 
         a:visited {
-            color: rgb(101, 123, 131);
+            color: inherit;
+            border-color: rgb(101, 123, 131);
         }
 
         a:hover,
@@ -115,67 +104,46 @@
             color: #586e75;
         }
 
-        iframe {
-            margin: 1em 0;
-            border: 1px solid;
-        }
-
         li {
             list-style-position: inside;
         }
 
-        /* @TODO: Get the styles for the .page more aligned with those of base.css */
-        .page {
-            background-color: rgb(255, 255, 255);
-            background-color: rgba(255, 255, 255, 0.5);
-            width: 40em;
-            height: 80%;
-            overflow: auto;
-            min-height: 20em;
-            padding: 0 2em;
-            border-radius: 0.35em;
+        main {
+            align-items: start;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
             margin: 5% auto;
+            max-width: 40em;
+            min-width: 20em;
         }
 
-        .page div {
-            max-height: 100%;
-            border: 1px solid;
-            overflow: auto;
-            margin: 1em 0;
-
+        main div {
+            border-radius: 0.35em;
             background-color: rgb(255, 255, 255);
             background-color: rgba(255, 255, 255, 0.8);
+            padding: 1em;
+            margin: 1em;
         }
 
-        .page div > * {
-            background-color: rgba(255, 255, 255, 0.2);
-            margin:0;
-            padding: 0.25em 1em;
-        }
+        main div :first-child {margin-top: 0;}
+        main div :last-child {margin-bottom: 0;}
 
-        .page div h2:first-child {
-            background-color: rgba(255, 255, 255, 0.8);
-            font-size: 200%;
-            height: 1.5em;
-            left: 0;
-            text-align: center;
-            top: 0;
+        main div ul {
+            padding: 0;
         }
-
     </style>
 </head>
 <body>
-    <div class="page">
-        <h1>
-            Potherca
-        </h1>
-        <p>
-            Homepage for Ben Peachey
-        </p>
+    <header>
+        <h1>Potherca</h1>
+        <p>Homepage for Ben Peachey</p>
+    </header>
 
+    <main>
+        <h2>Places you can find me</h2>
         <div>
-            <h2>Other places you can find me</h2>
-
             <h3>Personal/Social</h3>
             <ul>
                 <li><a rel="me" href="https://facebook.com/benpeachey">Facebook</a></li>
@@ -187,7 +155,8 @@
                 <li><a rel="me" href="https://www.pinterest.com/potherca/">Pinterest</a></li>
                 <li><a rel="me" href="https://twitter.com/potherca">Twitter</a></li>
             </ul>
-
+        </div>
+        <div>
             <h3>Code Related</h3>
             <ul>
                 <li><a rel="me" href="https://bitbucket.org/potherca">Bitbucket</a></li>
@@ -201,18 +170,15 @@
                 <li><a rel="me" href="https://projecteuler.net/profile/potherca.txt">Project Euler</a></li>
                 <li><a rel="me" href="https://stackoverflow.com/users/153049/ben-peachey">Stack Overflow</a></li>
             </ul>
-
-            <h3>Art Related</h3>
-            <ul>
-                <li><a rel="me" href="https://www.modelmayhem.com/potherca">Model Mayhem</a></li>
-            </ul>
-
+        </div>
+        <div>
             <h3>Email</h3>
             <ul>
                 <li><a href="mailto:potherca@gmail.com">potherca@gmail.com</a></li>
                 <li><a href="mailto:potherca@hotmail.com">potherca@hotmail.com</a></li>
             </ul>
-
+        </div>
+        <div>
             <h3>Other / Less Active</h3>
             <ul class="inactive">
                 <li><a rel="me" href="https://alpha.app.net/potherca">App.net</a></li>
@@ -251,7 +217,7 @@
 
         <iframe width="100%" height="100%" src="https://fiddle.jshell.net/potherca/hYMH8/show/light/" allowfullscreen="allowfullscreen" frameborder="0" scrolling="auto"></iframe>
 -->
-    </div>
+    </main>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K3YNT2ER4Y"></script>
