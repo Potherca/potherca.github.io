@@ -88,7 +88,6 @@
          *                  Hyperlinks should be hyper-sexy too!              *
          * ------------------------------------------------------------------ */
         a:link {
-            border-bottom: 0.1em solid #ccc;
             color: #000;
             text-decoration: none;
         }
@@ -104,22 +103,13 @@
             color: #586e75;
         }
 
-        li {
-            list-style-position: inside;
-            line-height: 1.85;
-        }
-
-        li a {
-            margin-left: -0.5em;
-        }
-
         main {
             align-items: baseline;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: center;
-            margin: 5% auto;
+            margin: 0 auto 5% auto;
             min-width: 20em;
         }
 
@@ -137,6 +127,17 @@
         main section ul {
             padding: 0;
         }
+
+        main section li {
+            list-style-position: inside;
+            line-height: 1.85;
+        }
+
+        main section li a {
+            margin-left: -0.5em;
+            border-bottom: 0.1em solid #ccc;
+        }
+
     </style>
 </head>
 <body>
