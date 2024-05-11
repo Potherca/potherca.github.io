@@ -138,12 +138,53 @@
             border-bottom: 0.1em solid #ccc;
         }
 
+        nav ul {
+            align-content: center;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0.5em;
+        }
+
+        nav ul li a,
+        nav ul li a:visited {
+            background-color: rgb(255, 255, 255);
+            border-radius: 0.35em;
+            border: 0.1em solid #ccc;
+            box-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+            color: #000;
+            display: block;
+            height: 2em;
+            line-height: 2em;
+            text-align: center;
+            width: 5em;
+            position: relative;
+        }
+        nav ul li a:hover {
+            box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.5);
+            left: 0.1em;
+            top: 0.1em;
+        }
+
     </style>
 </head>
 <body>
     <header>
         <h1>Potherca</h1>
         <p>Homepage for Ben Peachey</p>
+        <nav>
+            <ul>
+                <li><a href="https://github.com/potherca-blog/">Blog</a></li>
+                <li><a href="https://github.com/potherca">Portfolio</a></li>
+                <li><a href="https://www.linkedin.com/in/benpeachey/">Résumé</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
