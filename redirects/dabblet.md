@@ -1,6 +1,6 @@
 ---
 layout: redirect
-permalink: /dabblet
+permalink: /dabblet/
 redirect_slug: Potherca on Dabblet
 redirect_url: http://dabblet.com/user/potherca
 ---

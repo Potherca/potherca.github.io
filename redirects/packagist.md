@@ -1,6 +1,6 @@
 ---
 layout: redirect
-permalink: /packagist
+permalink: /packagist/
 redirect_slug: Potherca on Packagist
 redirect_url: https://packagist.org/users/potherca/
 ---

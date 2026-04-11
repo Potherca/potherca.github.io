@@ -1,6 +1,6 @@
 ---
 layout: redirect
-permalink: /jsfiddle
+permalink: /jsfiddle/
 redirect_slug: Potherca's JsFiddles
 redirect_url: https://jsfiddle.net/user/potherca/
 ---

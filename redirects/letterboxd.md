@@ -1,6 +1,6 @@
 ---
 layout: redirect
-permalink: /letterboxd
+permalink: /letterboxd/
 redirect_slug: Potherca on Letterboxd
 redirect_url: https://letterboxd.com/potherca/
 ---
