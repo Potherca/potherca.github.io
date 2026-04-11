@@ -1,17 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1;url={{page.redirect_url}}">
-        <script type="text/javascript">
-            window.location.href = "{{page.redirect_url}}"
-        </script>
-        <title>Page Redirection to {{page.redirect_slug}}</title>
-    </head>
-    <body>
-        <p>
-            If you are not redirected automatically, you should go to  
-            <a href="{{page.redirect_url}}">{{page.redirect_slug}}</a>
-        </p>
-    </body>
+<meta charset="UTF-8">
+<meta content="1;url={{page.redirect_url}}" http-equiv="refresh">
+<script type="text/javascript">window.location.href = '{{page.redirect_url}}'</script>
+<title>Page Redirection to {{page.redirect_slug}}</title>
+<p>If you are not redirected automatically, you should go to <a href="{{page.redirect_url}}">{{page.redirect_slug}}</a></p>
 </html>
